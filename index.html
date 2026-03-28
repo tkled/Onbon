@@ -3,23 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onbon Test</title>
+  <title>Onbon Remote</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Тест управления Onbon BX-Y2</h1>
+  <div class="app">
+    <div class="card">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">ONBON BX-Y2</div>
+          <h1>Пульт управления</h1>
+        </div>
+        <div class="status-dot" id="statusDot"></div>
+      </div>
 
-    <label for="ip">IP контроллера</label>
-    <input id="ip" type="text" placeholder="например: 192.168.1.50" />
+      <div class="section">
+        <label for="ip">IP контроллера</label>
+        <div class="input-row">
+          <input id="ip" type="text" placeholder="Например: 192.168.1.50" />
+          <button class="ghost-btn" id="saveIpBtn">Сохранить</button>
+        </div>
+      </div>
 
-    <div class="buttons">
-      <button id="onBtn">ВКЛ экран</button>
-      <button id="offBtn">ВЫКЛ экран</button>
-    </div>
+      <div class="section">
+        <div class="section-title">Питание экрана</div>
+        <div class="main-buttons">
+          <button id="onBtn" class="action-btn action-on">
+            <span class="btn-title">ВКЛ</span>
+            <span class="btn-sub">Включить экран</span>
+          </button>
 
-    <pre id="log">Лог:
+          <button id="offBtn" class="action-btn action-off">
+            <span class="btn-title">ВЫКЛ</span>
+            <span class="btn-sub">Выключить экран</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Быстрые действия</div>
+        <div class="quick-grid">
+          <button class="quick-btn" id="checkBtn">Проверить связь</button>
+          <button class="quick-btn" id="clearLogBtn">Очистить лог</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="log-header">
+          <div class="section-title">Лог</div>
+          <div class="mini-status" id="miniStatus">Ожидание</div>
+        </div>
+        <pre id="log" class="log-box">Лог:
 </pre>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
